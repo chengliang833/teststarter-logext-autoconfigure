@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cn.ulane</groupId>
+  <artifactId>teststarter-logext-autoconfigure</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+	<repositories>
+		<repository>
+			<id>ulane-nexus</id>
+			<name>ulane-nexus</name>
+			<url>http://nexus.ulane.top/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>top.ulane</groupId>
+			<artifactId>logext</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<!-- 测试时注释便于直接关联项目 -->
+			<!-- <optional>true</optional> -->
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+	        <version>4.2.4.RELEASE</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+  
+  	<build>
+	    <plugins>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-compiler-plugin</artifactId>
+			  <configuration>
+			    <source>1.8</source>
+			    <target>1.8</target>
+			    <encoding>UTF-8</encoding>
+			  </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.5.5</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			    <executions>
+			        <execution>
+			            <id>make-assembly</id>
+			            <phase>package</phase>
+			            <goals>
+			                <goal>single</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
+	    </plugins>
+	</build>
+  
+</project>
