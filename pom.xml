@@ -18,7 +18,7 @@
 			<artifactId>logext</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 			<!-- 测试时注释便于直接关联项目 -->
-			<!-- <optional>true</optional> -->
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
